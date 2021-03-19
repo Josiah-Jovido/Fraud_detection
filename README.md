@@ -30,19 +30,19 @@ The Model was built using Decision tree classifier, my preference as to this was
 After building and testing the model which worked sufficiently well, the model was saved in a pickle format for reuse. I successfully established a model that can trace fraudulent transactions from a financial data. 
 
 ### Steps to run the web app
-Firstly, Create a conda virtual environment
+Firstly, **Create** a conda virtual environment:
 ```
 conda create -n lazypredict python=3.7.9
 ```
-Secondly, activate the created lazypredict env with:
+Secondly, **Activate** the created lazypredict env with:
 ```
 conda activate lazypredict
 ```
-Thirdly, install the requirements.txt file using pip:
+Thirdly, **Install** the requirements.txt file using pip:
 ```
 pip install -r requirements.txt
 ```
-To run the app:
+To **run** the app:
 ```
 streamlit run app.py
 ```
