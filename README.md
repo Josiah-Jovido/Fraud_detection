@@ -28,3 +28,21 @@ PaySim simulates mobile money transactions based on a sample of real transaction
 
 The Model was built using Decision tree classifier, my preference as to this was from the results obtained from the model(app.py). App.py is a web based machine learning algorithm that runs comparison between different machine learning models and draws suggestion on the right model to use based on the accuracy score. I built the app using the streamlit library. The [requirement.txt](https://github.com/Josiah-Jovido/Fraud_detection/blob/main/requirements.txt) file for running the web based app can be found in the repo.
 After building and testing the model which worked sufficiently well, the model was saved in a pickle format for reuse. I successfully established a model that can trace fraudulent transactions from a financial data. 
+
+### Steps to run the web app
+Firstly, Create a conda virtual environment
+```
+conda create -n lazypredict python=3.7.9
+```
+Secondly, activate the created lazypredict env with:
+```
+conda activate lazypredict
+```
+Thirdly, install the requirements.txt file using pip:
+```
+pip install -r requirements.txt
+```
+To run the app:
+```
+streamlit run app.py
+```
