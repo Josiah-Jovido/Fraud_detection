@@ -1,7 +1,6 @@
 # Financial Fraud Detection Model
-
-
 ![image](https://www.nice.com/engage/blog/wp-content/webp-express/webp-images/doc-root/engage/blog/wp-content/uploads/2019/11/Blog-682X325-83.png.webp)
+
 Fraud detection is a set of activities undertaken to prevent money or property from being obtained through false pretenses. Fraud detection is applied to many industries such as banking or insurance. In banking, fraud may include forging checks or using stolen credit cards. Other forms of fraud may involve exaggerating losses or causing an accident with the sole intent for the payout.
 With an unlimited and rising number of ways someone can commit fraud, detection can be difficult to accomplish. Activities such as reorganization, downsizing, moving to new information systems or encountering a cybersecurity breach could weaken an organization's ability to detect fraud. This means techniques such as real-time monitoring for frauds is recommended. Organizations should look for fraud in financial transactions, location, devices used, initiated sessions and authentication systems.
 
