@@ -19,7 +19,7 @@ A.I techniques used to detect fraud include the use of:
 
 For the purpose of this project, I focused on the A.I techniques of fraud detection, in particular Machine learning using Decision Tree Model.
 
-### The Dataset
+### [The Dataset](https://github.com/Josiah-Jovido/Fraud_detection/tree/main/Datasets)
 
 There is a lack of public available datasets on financial services and specially in the emerging mobile money transactions domain. Part of the problem is the intrinsically private nature of financial transactions, that leads to no publicly available datasets. As such the dataset used for this analysis was generated using PaySim. PaySim uses aggregated data from the private dataset to generate a synthetic dataset that resembles the normal operation of transactions and injects malicious behaviour to later evaluate the performance of fraud detection methods.
 PaySim simulates mobile money transactions based on a sample of real transactions extracted from one month of financial logs from a mobile money service implemented in an African country. The original logs were provided by a multinational company, who is the provider of the mobile financial service which is currently running in more than 14 countries all around the world.
@@ -27,7 +27,7 @@ PaySim simulates mobile money transactions based on a sample of real transaction
 ### The Models([fraud_detection_model](https://github.com/Josiah-Jovido/Fraud_detection/blob/main/Fraud_detection_model.ipynb), [app.py](https://github.com/Josiah-Jovido/Fraud_detection/blob/main/app.py))
 
 The Model was built using Decision tree classifier, my preference as to this was from the results obtained from the model(app.py). App.py is a web based machine learning algorithm that runs comparison between different machine learning models and draws suggestion on the right model to use based on the accuracy score. I built the app using the streamlit library. The [requirement.txt](https://github.com/Josiah-Jovido/Fraud_detection/blob/main/requirements.txt) file for running the web based app can be found in the repo.
-After building and testing the model which worked sufficiently well, the model was saved in a pickle format for reuse. I successfully established a model that can trace fraudulent transactions from a financial data. 
+After building and testing the model which worked sufficiently well, the model was saved in a pickle format for reuse. Next i created a flask web app ([flask_app.py](https://github.com/Josiah-Jovido/Fraud_detection/blob/main/flask_app.py)) for easy accessibilty to the model for running predictions. The requests were made on postman, find below the steps for running a request on postman. I successfully established a model that can predict fraudulent transactions from a financial data. 
 
 ### Steps to run the web app
 Firstly, **Create** a conda virtual environment:
@@ -45,4 +45,52 @@ pip install -r requirements.txt
 To **run** the app:
 ```
 streamlit run app.py
+```
+
+### Steps to run the Flask App
+**Create** a Python Virtual Env
+```
+python3 -m virtualenv flask
+```
+**Activate** the virtualenv
+```
+source flask/bin/activate
+```
+**Install** Packages
+```
+pip install flask, pandas, sklearn, joblib
+```
+**Run** flask app
+```
+python3 flask_app.py
+```
+
+### Steps to make requests on postman
+NB: Set the method type to **'POST'**
+In the url box input 
+```
+http://127.0.0.1:5200/predict
+```
+The body format to query the data is
+```
+{
+    "data": [
+        {
+            "step": 1,
+            "amount": 9839.64,
+            "oldbalanceOrig": 170136.0,
+            "newbalanceOrig": 160296.36,
+            "oldbalanceDest": 0.0,
+            "newbalanceDest": 0.0,
+            "balancediffOrig": -9839.64,
+            "balancediffDest": 0.0,
+            "merchant": 1,
+            "type_CASH_IN": 0,
+            "type_CASH_OUT": 0,
+            "type_DEBIT": 0,
+            "type_PAYMENT": 1,
+            "type_TRANSFER": 0
+        }
+    ]
+}
 ```
