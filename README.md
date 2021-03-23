@@ -27,7 +27,7 @@ PaySim simulates mobile money transactions based on a sample of real transaction
 ### The Models([fraud_detection_model](https://github.com/Josiah-Jovido/Fraud_detection/blob/main/Fraud_detection_model.ipynb), [app.py](https://github.com/Josiah-Jovido/Fraud_detection/blob/main/app.py))
 
 The Model was built using Decision tree classifier, my preference as to this was from the results obtained from the model(app.py). App.py is a web based machine learning algorithm that runs comparison between different machine learning models and draws suggestion on the right model to use based on the accuracy score. I built the app using the streamlit library. The [requirement.txt](https://github.com/Josiah-Jovido/Fraud_detection/blob/main/requirements.txt) file for running the web based app can be found in the repo.
-After building and testing the model which worked sufficiently well, the model was saved in a pickle format for reuse. Next i created a flask web app ([flask_app.py](https://github.com/Josiah-Jovido/Fraud_detection/blob/main/flask_app.py)) for easy accessibilty to the model for running predictions. The requests were made on postman, find below the steps for running a request on postman. I successfully established a model that can predict fraudulent transactions from a financial data. 
+After building and testing the model which worked sufficiently well, the model was saved in a pickle format for reuse. Next, i created a flask web app ([flask_app.py](https://github.com/Josiah-Jovido/Fraud_detection/blob/main/flask_app.py)) for easy accessibilty of the model for running predictions. The requests were made on postman, find below the steps for running a request on postman. I successfully established a model that can predict fraudulent transactions from a financial data. 
 
 ### Steps to run the web app
 Firstly, **Create** a conda virtual environment:
@@ -67,6 +67,7 @@ python3 flask_app.py
 
 ### Steps to make requests on postman
 NB: Set the method type to **'POST'**
+
 In the url box input 
 ```
 http://127.0.0.1:5200/predict
