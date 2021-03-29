@@ -69,6 +69,10 @@ pip install flask, pandas, sklearn, joblib
 ```
 python3 flask_app.py
 ```
+## The Flask App
+![image](https://i.ibb.co/wdtmPJB/Screenshot-176.png)
+
+![image](https://i.ibb.co/tQKRgxg/Screenshot-175.png)
 
 ### Steps to make requests on postman
 NB: Set the method type to **'POST'**
