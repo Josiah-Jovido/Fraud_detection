@@ -49,6 +49,8 @@ To **run** the app:
 ```
 streamlit run app.py
 ```
+## The Web App
+![image](https://i.ibb.co/jV8YzYv/Screenshot-174.png)
 
 ### Steps to run the Flask App
 **Create** a Python Virtual Env
