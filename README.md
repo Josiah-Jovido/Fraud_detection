@@ -115,3 +115,5 @@ docker build -t fraud_detection_class:1.0 .
 docker run -d -p 6000:5200 fraud_detection_class:1.0
 ```
 Once the container is running you can now query on postman. The new port code for running on postman will be **6000**
+
+#### Find the hosted app on heroku [here](https://ffda.herokuapp.com/)
