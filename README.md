@@ -29,6 +29,9 @@ PaySim simulates mobile money transactions based on a sample of real transaction
 The Model was built using Decision tree classifier, my preference as to this was from the results obtained from the model(app.py). App.py is a web based machine learning algorithm that runs comparison between different machine learning models and draws suggestion on the right model to use based on the accuracy score. I built the app using the streamlit library. The [requirement.txt](https://github.com/Josiah-Jovido/Fraud_detection/blob/main/requirements.txt) file for running the web based app can be found in the repo.
 After building and testing the model which worked sufficiently well, the model was saved in a pickle format for reuse. Next, i created a flask web app ([flask_app.py](https://github.com/Josiah-Jovido/Fraud_detection/blob/main/flask_app.py)) for easy accessibilty of the model for running predictions. The requests were made on postman, find below the steps for running a request on postman. I successfully established a model that can predict fraudulent transactions from a financial data. 
 
+### Deployment
+After building the model and running on flask, i took the project a step further by deploying the model in a production environment. This was done using Docker. Docker is a great tool for light weight containerization and deployment. I started off by creating a [requirements_1.txt](https://github.com/Josiah-Jovido/Fraud_detection/blob/main/requirements_1.txt) file for running the flask app, then i wrapped the command in a [Dockerfile](https://github.com/Josiah-Jovido/Fraud_detection/blob/main/Dockerfile) before deployment. The steps i took for deploying on docker can be found below. Through this, you can easily run the FFDA II model on any machine.
+
 ### Steps to run the web app
 Firstly, **Create** a conda virtual environment:
 ```
@@ -46,6 +49,8 @@ To **run** the app:
 ```
 streamlit run app.py
 ```
+## The Web App
+![image](https://i.ibb.co/jV8YzYv/Screenshot-174.png)
 
 ### Steps to run the Flask App
 **Create** a Python Virtual Env
@@ -64,6 +69,10 @@ pip install flask, pandas, sklearn, joblib
 ```
 python3 flask_app.py
 ```
+## The Flask App
+![image](https://i.ibb.co/wdtmPJB/Screenshot-176.png)
+
+![image](https://i.ibb.co/tQKRgxg/Screenshot-175.png)
 
 ### Steps to make requests on postman
 NB: Set the method type to **'POST'**
@@ -95,3 +104,14 @@ The body format to query the data is
     ]
 }
 ```
+
+### Steps to deploy on Docker
+**Build** an image from the Dockerfile in the PWD
+```
+docker build -t fraud_detection_class:1.0 .
+```
+**Run** the container
+```
+docker run -d -p 6000:5200 fraud_detection_class:1.0
+```
+Once the container is running you can now query on postman. The new port code for running on postman will be **6000**
